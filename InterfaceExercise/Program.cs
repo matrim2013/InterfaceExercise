@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net.Http.Headers;
 
 namespace InterfaceExercise
 {
@@ -10,32 +12,46 @@ namespace InterfaceExercise
 
             //Create 2 Interfaces called IVehicle & ICompany
 
-            //Create 3 classes called Car , Truck , & SUV
+
 
             //In your IVehicle
-            
-                /* Create 4 members that Car, Truck, & SUV all have in common.
-                 * Example: All vehicles have a number of wheels... for now..
-                 */
-            
+
+            /* Create 4 members that Car, Truck, & SUV all have in common.
+             * Example: All vehicles have a number of wheels... for now..
+             */
+
+            //Create 3 classes called Car , Truck , & SUV
 
             //In ICompany
-            
-                /*Create 2 members that are specific to each every company
-                 * regardless of vehicle type.
-                 *
-                 *
-                 * Example: public string Logo { get; set; }
-                 */
+
+            /*Create 2 members that are specific to each every company
+             * regardless of vehicle type.
+             *
+             *
+             * Example: public string Logo { get; set; }
+             */
 
             //In each of your car, truck, and suv classes
 
-                /*Create 2 members that are specific to each class
-                 * Example: truck has a bed size while car has a trunk while suv has a cargo hold size
-                 *
-                 * Then, Set each class to inherit from both IVehicle and ICompany and implement their members.
-                 * 
-                 */
+            /*Create 2 members that are specific to each class
+             * Example: truck has a bed size while car has a trunk while suv has a cargo hold size
+             *
+             * Then, Set each class to inherit from both IVehicle and ICompany and implement their members.
+             * 
+             */
+            var tesla = new Car();
+            var silverado = new Truck();
+            var expedtion = new SUV();
+
+            var vehicles = new List<IVehicle>() { tesla, silverado, expedtion };
+
+            foreach(var vehicle in vehicles)
+            {
+                vehicle.Drive();
+                vehicle.Reverse();
+                vehicle.Park();
+
+            }
 
             //Now, create objects of your 3 classes and give their members values;
             //Creatively display and organize their values
